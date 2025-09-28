@@ -1,0 +1,62 @@
+.experience {
+  padding-left: 2em;
+  
+}
+
+.experience h1 {
+
+  font-size: 2.2em;
+  margin-bottom: 2em;
+
+}
+
+.exp-div {
+
+ display: flex;
+
+  gap: 1.5em;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.exp-container {
+  display: flex;
+  gap: 1.5em;
+  padding: 1.5em;
+  border-radius: 1em;
+  border-radius: 1em;
+
+  border: 2px solid aqua; 
+  align-items: center;
+  transition: transform 0.2s ease-in-out;
+}
+
+.exp-left img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.exp-right h2 {
+  margin: 0;
+  font-size: 1.5em;
+
+}
+
+.exp-right h5 {
+  margin: 0.3em 0;
+
+  font-weight: normal;
+}
+
+.exp-right h3 {
+  margin: 0.2em 0;
+
+}
+
+.exp-right p {
+  margin: 0.5em 0 0;
+
+  line-height: 1.4;
+}

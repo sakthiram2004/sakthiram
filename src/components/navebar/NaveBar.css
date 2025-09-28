@@ -1,0 +1,14 @@
+.navebar{
+   
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      
+}
+.menu{
+      width: 50%;
+    
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+}
