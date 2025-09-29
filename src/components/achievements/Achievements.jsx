@@ -11,7 +11,7 @@ const Achievements = () => {
           <h3>🏆 LeetCode 400+ Problems</h3>
           <p>Solved over 400 coding problems across contests and practice.</p>
           <a
-            href="https://leetcode.com/u/sakthiram2004/"
+            href="https://leetcode.com/u/sakthiram/"
             target="_blank"
             rel="noopener noreferrer"
             className="project-link"

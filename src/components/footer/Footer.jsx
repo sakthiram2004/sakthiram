@@ -30,7 +30,7 @@ const Footer = () => {
         >
           <FaEnvelope style={{ marginRight: "0.5em" }} /> senthil.sakthiram@gmail.com
         </a>
-        <a href="https://drive.google.com/file/d/1idOW-E_-ntVH_9zQEbK2740RwTkJmVPJ/view?usp=sharing" download>
+        <a href="https://drive.google.com/file/d/1idOW-E_-ntVH_9zQEbK2740RwTkJmVPJ/view?usp=sharing" >
           <FaFileDownload style={{ marginRight: "0.5em" }} /> Download CV
         </a>
       </div>
