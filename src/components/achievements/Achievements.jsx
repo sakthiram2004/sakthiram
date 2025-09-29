@@ -4,36 +4,73 @@ import "./Achievements.css";
 const Achievements = () => {
   return (
     <div className="achievements">
-      <h1>Achievements</h1>
+      <h1 className="section-title">Achievements & Certificates</h1>
+
       <div className="achievements-list">
         <div className="achievement-card">
           <h3>🏆 LeetCode 400+ Problems</h3>
           <p>Solved over 400 coding problems across contests and practice.</p>
+          <a
+            href="https://leetcode.com/u/sakthiram2004/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="project-link"
+          >
+            View Profile
+          </a>
         </div>
+
         <div className="achievement-card">
-          <h3>🚀 Internships Completed</h3>
+          <h3>🚀Zoho Internship Completed</h3>
           <p>Java Intern at ITechTechnology and Fizontech.</p>
+          <a
+            href="https://drive.google.com/file/d/1SDAlcrHCmI9dhZZjOvqnFtESDcl8mtj1/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="project-link"
+          >
+            View Certificate
+          </a>
         </div>
+
         <div className="achievement-card">
           <h3>📚 NPTEL Certification</h3>
           <p>Completed Java Programming Course with good performance.</p>
+          <a
+            href="https://drive.google.com/file/d/14PfNUrxc8uqoNzSPu-ob5IKaS_16L5RT/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="project-link"
+          >
+            View Certificate
+          </a>
         </div>
-      </div>
 
-      <h1>Certificates</h1>
-      <div className="certificates-list">
-        <div className="certificate-card">
-          <h3>🎓 Java (NPTEL)</h3>
-          <a href="#" target="_blank" rel="noreferrer">View Certificate</a>
-        </div>
-        <div className="certificate-card">
+        <div className="achievement-card">
           <h3>🎓 Fizontech Internship</h3>
-          <a href="#" target="_blank" rel="noreferrer">View Certificate</a>
+          <p>Internship experience in Java Development.</p>
+          <a
+            href="https://drive.google.com/file/d/1Sgj2GdEU1P4P0TLVPgUoC-L3ENgtDCM0/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="project-link"
+          >
+            View Certificate
+          </a>
         </div>
-        <div className="certificate-card">
+
+        {/* <div className="achievement-card">
           <h3>🎓 ITech Internship</h3>
-          <a href="#" target="_blank" rel="noreferrer">View Certificate</a>
-        </div>
+          <p>Worked on real-world Java projects during internship.</p>
+          <a
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="project-link"
+          >
+            View Certificate
+          </a>
+        </div> */}
       </div>
     </div>
   );

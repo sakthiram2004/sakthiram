@@ -1,37 +1,51 @@
-.achievements {
-
-  padding: 2em;
-  border-radius: 1em;
-  margin-top: 2em;
- 
+.section-title {
+  font-size: 2.2em;
+  margin-bottom: 1.5em;
+  text-align: left;
 }
 
-.achievements h1 {
-  font-size: 2em;
-  margin-bottom: 1em;
-
-}
-
-.achievements-list, .certificates-list {
+.achievements-list {
   display: flex;
-  gap: 1.5em;
   flex-wrap: wrap;
+  gap: 2em;
+  justify-content: flex-start; /* align cards from the left */
+  align-items: stretch;       /* make cards equal height */
 }
 
-.achievement-card, .certificate-card {
-  flex: 1 1 25em;
+.achievement-card {
+  background: white;
+  color: black;
   padding: 1.5em;
-  border-radius: 0.8em;
-  transition: transform 0.2s;
+  border-radius: 15px;
+  width: 260px;
+  text-align: left;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease-in-out;
+  flex: 1 1 260px; /* allows responsive wrapping */
+  max-width: 300px; /* prevent too wide cards */
 }
 
+.achievement-card:hover {
+  transform: scale(1.05);
+}
 
-.certificate-card a {
+.achievement-card h3 {
+  margin: 0;
+  font-size: 1.2em;
+  margin-bottom: 0.5em;
+}
+
+.project-link {
   display: inline-block;
   margin-top: 0.8em;
-  font-weight: 600;
+  padding: 0.6em 1.2em;
+  background: royalblue;
+  color: white;
+  border-radius: 10px;
   text-decoration: none;
-  padding: 0.4em 0.8em;
-  border-radius: 0.5em;
- 
+  transition: background 0.3s ease-in-out;
+}
+
+.project-link:hover {
+  background: aqua;
 }

@@ -9,20 +9,29 @@ const Footer = () => {
       <p>Let’s connect! You can reach me through any of these platforms:</p>
 
       <div className="footer-links">
-        <a href="https://www.linkedin.com/in/Sakthiram-s" target="_blank" rel="noreferrer">
-          <FaLinkedin /> LinkedIn
+        <a 
+          href="https://www.linkedin.com/in/sakthiram-s" 
+          target="_blank" 
+          rel="noopener noreferrer"
+        >
+          <FaLinkedin style={{ marginRight: "0.5em" }} /> LinkedIn
         </a>
-        <a href="https://github.com/Sakthiram2004" target="_blank" rel="noreferrer">
-          <FaGithub /> GitHub
+
+        <a 
+          href="https://github.com/Sakthiram2004" 
+          target="_blank" 
+          rel="noopener noreferrer"
+        >
+          <FaGithub style={{ marginRight: "0.5em" }} /> GitHub
         </a>
-        <a href="mailto:senthil.sakthiram@gmail.com">
-          <FaEnvelope /> Email
-        </a>
-        <a href="tel:+916383926551">
-          <FaPhone /> +91 6383926551
+
+        <a 
+          href="mailto:senthil.sakthiram@gmail.com?subject=Hello Sakthiram&body=Hi Sakthiram," 
+        >
+          <FaEnvelope style={{ marginRight: "0.5em" }} /> senthil.sakthiram@gmail.com
         </a>
         <a href="/Sakthiram-CV.pdf" download>
-          <FaFileDownload /> Download CV
+          <FaFileDownload style={{ marginRight: "0.5em" }} /> Download CV
         </a>
       </div>
 

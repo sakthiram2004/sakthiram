@@ -6,18 +6,19 @@ const Projects = () => {
     {
       name: "E-Commerce App",
       stack: ["Spring Boot", "MySQL", "React"],
-      link: "https://sakthiram2004.github.io/furniture-ecommerce/"
-    },
-    {
-      name: "Evently App",
-      stack: ["Flutter", "Node.js", "MongoDB"],
-      link: "https://github.com/sakthiram2004/eventlyapp.git"
-    },
-    {
-      name: "To-Do App",
-      stack: ["Spring Boot", "Flutter"],
-      link: "https://github.com/sakthiram2004/todoapp.git"
+      link: "https://sakthiram2004.github.io/furniture-ecommerce/",
+       description: "A full-stack furniture e-commerce platform with product management, cart, and checkout system."
     }
+    // {
+    //   name: "Evently App",
+    //   stack: ["Flutter", "Node.js", "MongoDB"],
+    //   link: "https://github.com/sakthiram2004/eventlyapp.git"
+    // },
+    // {
+    //   name: "To-Do App",
+    //   stack: ["Spring Boot", "Flutter"],
+    //   link: "https://github.com/sakthiram2004/todoapp.git"
+    // }
   ]
 
   return (
@@ -29,6 +30,11 @@ const Projects = () => {
             <h2>{project.name}</h2>
             <p className="stack">
               {project.stack.join(" • ")}
+        
+            </p>
+            <p >
+             
+              {project.description}
             </p>
             <a 
               href={project.link} 

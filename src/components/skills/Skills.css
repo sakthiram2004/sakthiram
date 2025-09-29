@@ -1,65 +1,93 @@
 .skill {
-
   max-width: 85em;
   min-height: 30em;
-  margin-top: 1em;
-  border-radius: 0px 50px 50px 0px;
-  padding: 2em;
-  color: white;
 }
 
 /* Section Titles */
-.section-title {
- 
+.section-skilltitle {
   font-size: 2.2em;
   margin-bottom: 1em;
 }
 
-/* Education Section */
+.inner-skill-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ============================
+   Education Section
+   ============================ */
 .edu-container {
   display: flex;
   flex-direction: column;
-  gap: 1.5em;
-  margin-bottom: 3em;
+  gap: 1.2em; /* spacing between cards */
 }
 
 .edu-card {
-  background: white;
+  background-color: antiquewhite;
   color: black;
-  padding: 1.5em;
-  border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* keep text aligned left */
+  padding: 1em; /* small padding just for readability */
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 1em; /* space between logo and text */
+  margin-bottom: 0.5em;
+}
+
+.edu-card img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
 }
 
 .edu-card h2 {
   margin: 0;
   font-size: 1.4em;
+  text-align: left;
 }
 
 .edu-card h3 {
-  margin: 0.5em 0;
+  margin: 0.4em 0;
   font-weight: normal;
   color: #444;
+  text-align: left;
 }
 
-/* Skills Section */
+.edu-card p {
+  margin: 0.2em 0;
+  text-align: left;
+}
+
+/* ============================
+   Skills Section
+   ============================ */
 .skills-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 2em;
+  margin-top: 1.5em;
 }
 
 .skill-card {
   width: 100px;
   height: 100px;
-  background: white;
-  border-radius: 20px;
+  border: 2px solid aqua;
+  border-radius: 50%; /* make perfect circle */
   display: flex;
   align-items: center;
   justify-content: center;
   transition: transform 0.3s ease-in-out;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  background: white;
 }
 
 .skill-card:hover {

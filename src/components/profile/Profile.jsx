@@ -1,6 +1,7 @@
 import React from 'react'
 import './Profile.css'
 import alex from './../../assets/alex.png'
+import men from './../../assets/men.png'
 const Profile = () => {
   return (
     <div className='profile'>
@@ -11,7 +12,7 @@ const Profile = () => {
             </p>
       </div>
       <div className="image">
-            <img src={alex} alt="" />
+            <img src={men} alt="" />
       </div>
     </div>
   )

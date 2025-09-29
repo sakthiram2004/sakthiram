@@ -5,6 +5,7 @@ import c from './../../assets/c.png'
 import tailwin from './../../assets/tailwind.png'
 import ret from './../../assets/react.png'
 import java from './../../assets/java.png'
+import mzcet from './../../assets/mzcet.png'
 import spring from './../../assets/springboot.png'
 //import flutter from './../../assets/flutter.png'
 //import node from './../../assets/node.png'
@@ -27,7 +28,7 @@ const Skills = () => {
     { name: 'Java', logo:java  },
     { name: 'Spring Boot', logo: spring },
     // { name: 'Flutter', logo: zoho },
-    // { name: 'Node.js', logo: zoho },
+   
     // { name: 'MySQL', logo: zoho },
     // { name: 'Git & GitHub', logo: zoho },
     { name: 'HTML', logo: html },
@@ -44,8 +45,12 @@ const Skills = () => {
 
       {/* Skills Section */}
       <div className="skills-container">
-        <h1 className="section-title">Technical Skills</h1>
+        <h1 className="section-skilltitle">Technical Skill</h1>
+         <h4 className="inner-skill-title">
+            Programming & Framework
+            </h4> 
         <div className="skills-grid">
+         
           {skills.map((item, index) => (
             <div className="skill-card" key={index}>
               <img src={item.logo} alt={item.name} />
@@ -54,11 +59,14 @@ const Skills = () => {
         </div>
       </div>
       <div className="education">
-        <h1 className="section-title">Education</h1>
+        <h1 className="section-skilltitle">Education</h1>
         <div className="edu-container">
           {education.map((edu, index) => (
             <div className="edu-card" key={index}>
+            <div className="title">
+              <img src={mzcet} alt="" />
               <h2>{edu.college}</h2>
+              </div>  
               <h3>{edu.degree}</h3>
               <p>{edu.year}</p>
               <p>{edu.place}</p>

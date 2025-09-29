@@ -3,7 +3,7 @@ import  './NaveBar.css'
 const NaveBar = () => {
   return (
     <div className='navebar'>
-      <div className="logo">LOGO</div>
+      <div className="logo">SR</div>
      <div className='menu'>
       <h3>Home</h3>
        <h3>Experiance</h3>
