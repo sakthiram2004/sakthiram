@@ -1,18 +1,59 @@
-.navebar{
-   
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      
+.navebar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8em 1.5em; /* some padding for breathing space */
 }
-.menu{
-      width: 50%;
-    
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
+
+.menu {
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap; /* allow items to wrap if small */
 }
-.logo{
-      font-weight: bold;
-      font-size: 2em;
+
+.logo {
+  font-weight: bold;
+  font-size: 2em;
+}
+
+/* =======================
+   Responsive Behavior
+   ======================= */
+
+/* Tablet screens */
+@media (max-width: 1024px) {
+  .menu {
+    width: 60%;
+    font-size: 0.95em; /* slightly smaller text */
+  }
+}
+
+/* Mobile screens */
+@media (max-width: 768px) {
+  .navebar {
+    flex-direction: row;  /* logo on top, menu below */
+    align-items: center;
+    justify-content: center; /* align left */
+  }
+
+  .menu {
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 0.8em;
+  }
+}
+
+/* Extra small mobile */
+@media (max-width: 480px) {
+  .menu {
+    flex-direction: column; /* stack menu items */
+    align-items: flex-start;
+    gap: 0.5em;
+  }
+
+  .menu h3 {
+    font-size: 1em;
+  }
 }
