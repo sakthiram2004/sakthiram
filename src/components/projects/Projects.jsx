@@ -8,12 +8,12 @@ const Projects = () => {
       stack: ["Spring Boot", "MySQL", "React"],
       link: "https://sakthiram2004.github.io/furniture-ecommerce/",
        description: "A full-stack furniture e-commerce platform with product management, cart, and checkout system."
-    }
-    // {
-    //   name: "Evently App",
-    //   stack: ["Flutter", "Node.js", "MongoDB"],
-    //   link: "https://github.com/sakthiram2004/eventlyapp.git"
-    // },
+    },
+    {
+      name: "Ziply Food Delivery App",
+      stack: ["Spring Boot", "Mysql"],
+      link: "https://github.com/sakthiram2004/Ziply.git"
+    },
     // {
     //   name: "To-Do App",
     //   stack: ["Spring Boot", "Flutter"],
