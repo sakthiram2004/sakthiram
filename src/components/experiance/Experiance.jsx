@@ -33,7 +33,7 @@ const Experiance = () => {
   ]
 
   return (
-    <div className="experience">
+    <div className="experience" id='experiance'>
       <h1>Experience</h1>
       <div className="exp-div">
         {exp.map((item, index) => (
