@@ -4,16 +4,18 @@ import './Projects.css'
 const Projects = () => {
   const projects = [
     {
-      name: "E-Commerce App",
-      stack: ["Spring Boot", "MySQL", "React"],
-      link: "https://sakthiram2004.github.io/furniture-ecommerce/",
-       description: "A full-stack furniture e-commerce platform with product management, cart, and checkout system."
-    },
-    {
       name: "Ziply Food Delivery App",
       stack: ["Spring Boot", "Mysql"],
-      link: "https://github.com/sakthiram2004/Ziply.git"
+      link: "https://github.com/sakthiram2004/Ziply.git",
+      description: "A Springboot Food delivery application."
     },
+    {
+      name: "E-Commerce App",
+      stack: ["Spring Boot", "MySQL"],
+      link: "https://github.com/sakthiram2004/furniture.git",
+       description: "A Springboot furniture e-commerce platform with product management, cart, and checkout system."
+    },
+    
     // {
     //   name: "To-Do App",
     //   stack: ["Spring Boot", "Flutter"],
