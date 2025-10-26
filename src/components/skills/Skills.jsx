@@ -13,6 +13,7 @@ import spring from './../../assets/springboot.png'
 //import git from './../../assets/git.png'
 import html from './../../assets/html.png'
 import cs from './../../assets/cs.png'
+import redis from './../../assets/redis.png'
 
 const Skills = () => {
   const education = [
@@ -35,7 +36,9 @@ const Skills = () => {
     { name: 'C', logo: c },
     { name: 'REACT', logo: ret },
     { name: 'TAILWIND', logo: tailwin },
-    { name: 'CSS', logo: cs }
+    { name: 'CSS', logo: cs },
+    { name: 'Redis', logo: redis }
+    
   ]
 
   return (
