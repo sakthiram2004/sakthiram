@@ -1,7 +1,60 @@
 import React from 'react'
 import { motion } from 'motion/react'
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa'
+import { use3DTilt } from '../../hooks/use3DTilt'
 import './Projects.css'
+
+const ProjectCard = ({ project, cardVariants }) => {
+  const tilt = use3DTilt()
+
+  return (
+    <motion.div 
+      className="project-card glass-card" 
+      variants={cardVariants}
+      style={tilt.style}
+      onMouseMove={tilt.onMouseMove}
+      onMouseLeave={tilt.onMouseLeave}
+      whileHover={{ 
+        y: -8,
+        borderColor: 'var(--accent-cyan)',
+        boxShadow: '0 10px 30px rgba(0, 242, 254, 0.15)'
+      }}
+    >
+      <div className="project-header">
+        <div className="folder-icon">📂</div>
+        <a 
+          href={project.link} 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="github-icon-link"
+        >
+          <FaGithub size={22} />
+        </a>
+      </div>
+
+      <div className="project-body">
+        <h3>{project.name}</h3>
+        <p>{project.description}</p>
+      </div>
+
+      <div className="project-footer">
+        <div className="stack-container">
+          {project.stack.map((tech, idx) => (
+            <span className="tech-badge" key={idx}>{tech}</span>
+          ))}
+        </div>
+        <a 
+          href={project.link} 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="project-link-btn"
+        >
+          View Repository <FaExternalLinkAlt size={12} style={{ marginLeft: '6px' }} />
+        </a>
+      </div>
+    </motion.div>
+  )
+}
 
 const Projects = () => {
   const projects = [
@@ -62,49 +115,11 @@ const Projects = () => {
         viewport={{ once: true, margin: '-50px' }}
       >
         {projects.map((project, index) => (
-          <motion.div 
-            className="project-card glass-card" 
-            key={index}
-            variants={cardVariants}
-            whileHover={{ 
-              y: -8,
-              borderColor: 'var(--accent-cyan)',
-              boxShadow: '0 10px 30px rgba(0, 242, 254, 0.15)'
-            }}
-          >
-            <div className="project-header">
-              <div className="folder-icon">📂</div>
-              <a 
-                href={project.link} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="github-icon-link"
-              >
-                <FaGithub size={22} />
-              </a>
-            </div>
-
-            <div className="project-body">
-              <h3>{project.name}</h3>
-              <p>{project.description}</p>
-            </div>
-
-            <div className="project-footer">
-              <div className="stack-container">
-                {project.stack.map((tech, idx) => (
-                  <span className="tech-badge" key={idx}>{tech}</span>
-                ))}
-              </div>
-              <a 
-                href={project.link} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="project-link-btn"
-              >
-                View Repository <FaExternalLinkAlt size={12} style={{ marginLeft: '6px' }} />
-              </a>
-            </div>
-          </motion.div>
+          <ProjectCard 
+            project={project} 
+            cardVariants={cardVariants} 
+            key={index} 
+          />
         ))}
       </motion.div>
     </section>

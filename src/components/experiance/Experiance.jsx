@@ -33,6 +33,29 @@ const Experiance = () => {
     }
   ]
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.25
+      }
+    }
+  }
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: 'spring',
+        stiffness: 70,
+        damping: 15
+      }
+    }
+  }
+
   return (
     <section className="experience" id='experiance'>
       <motion.h2 
@@ -45,17 +68,20 @@ const Experiance = () => {
         Work <span className="gradient-text">Experience</span>
       </motion.h2>
 
-      <div className="timeline">
+      <motion.div 
+        className="timeline"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: '-100px' }}
+      >
         <div className="timeline-line"></div>
         
         {exp.map((item, index) => (
           <motion.div 
             className="timeline-item" 
             key={index}
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-50px' }}
-            transition={{ duration: 0.6, delay: index * 0.15 }}
+            variants={itemVariants}
           >
             <div className="timeline-badge">
               <img src={item.photo} alt={item.name} className="timeline-logo" />
@@ -69,7 +95,7 @@ const Experiance = () => {
             </div>
           </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
   )
 }

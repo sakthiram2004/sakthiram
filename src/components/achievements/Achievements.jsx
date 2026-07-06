@@ -1,7 +1,48 @@
 import React from "react";
 import { motion } from "motion/react";
 import { FaExternalLinkAlt, FaAward, FaCertificate, FaGraduationCap } from "react-icons/fa";
+import { use3DTilt } from "../../hooks/use3DTilt";
 import "./Achievements.css";
+
+const AchievementCard = ({ item, cardVariants }) => {
+  const tilt = use3DTilt()
+
+  return (
+    <motion.div 
+      className="achievement-card glass-card" 
+      variants={cardVariants}
+      style={tilt.style}
+      onMouseMove={tilt.onMouseMove}
+      onMouseLeave={tilt.onMouseLeave}
+      whileHover={{ 
+        scale: 1.03,
+        borderColor: 'var(--accent-purple)',
+        boxShadow: '0 8px 25px rgba(157, 78, 221, 0.15)'
+      }}
+    >
+      <div className="achievement-icon-wrapper">
+        <span className="achievement-icon gradient-text">{item.icon}</span>
+      </div>
+      
+      <div className="achievement-body">
+        <h3>{item.title}</h3>
+        <p>{item.description}</p>
+      </div>
+
+      <div className="achievement-footer">
+        <a
+          href={item.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="achievement-link"
+        >
+          {item.type === "award" ? "View Profile" : "View Certificate"}
+          <FaExternalLinkAlt size={11} style={{ marginLeft: "6px" }} />
+        </a>
+      </div>
+    </motion.div>
+  )
+}
 
 const Achievements = () => {
   const achievementsList = [
@@ -78,37 +119,11 @@ const Achievements = () => {
         viewport={{ once: true, margin: "-50px" }}
       >
         {achievementsList.map((item, index) => (
-          <motion.div 
-            className="achievement-card glass-card" 
-            key={index}
-            variants={cardVariants}
-            whileHover={{ 
-              scale: 1.03,
-              borderColor: 'var(--accent-purple)',
-              boxShadow: '0 8px 25px rgba(157, 78, 221, 0.15)'
-            }}
-          >
-            <div className="achievement-icon-wrapper">
-              <span className="achievement-icon gradient-text">{item.icon}</span>
-            </div>
-            
-            <div className="achievement-body">
-              <h3>{item.title}</h3>
-              <p>{item.description}</p>
-            </div>
-
-            <div className="achievement-footer">
-              <a
-                href={item.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="achievement-link"
-              >
-                {item.type === "award" ? "View Profile" : "View Certificate"}
-                <FaExternalLinkAlt size={11} style={{ marginLeft: "6px" }} />
-              </a>
-            </div>
-          </motion.div>
+          <AchievementCard 
+            item={item} 
+            cardVariants={cardVariants} 
+            key={index} 
+          />
         ))}
       </motion.div>
     </section>

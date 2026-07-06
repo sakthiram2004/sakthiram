@@ -1,10 +1,42 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { motion } from 'motion/react'
 import { FaArrowRight, FaDownload } from 'react-icons/fa'
 import './Profile.css'
 import men from './../../assets/men.png'
 
 const Profile = () => {
+  const roles = ["Software Developer", "Full Stack Engineer", "Java & Spring Developer", "Flutter Specialist"]
+  const [currentRoleIndex, setCurrentRoleIndex] = useState(0)
+  const [currentText, setCurrentText] = useState('')
+  const [isDeleting, setIsDeleting] = useState(false)
+
+  useEffect(() => {
+    let timer
+    const handleType = () => {
+      const fullText = roles[currentRoleIndex]
+      if (!isDeleting) {
+        setCurrentText(fullText.substring(0, currentText.length + 1))
+        if (currentText === fullText) {
+          timer = setTimeout(() => setIsDeleting(true), 1500)
+          return
+        }
+      } else {
+        setCurrentText(fullText.substring(0, currentText.length - 1))
+        if (currentText === '') {
+          setIsDeleting(false)
+          setCurrentRoleIndex((prev) => (prev + 1) % roles.length)
+          return
+        }
+      }
+
+      const speed = isDeleting ? 40 : 100
+      timer = setTimeout(handleType, speed)
+    }
+
+    timer = setTimeout(handleType, 100)
+    return () => clearTimeout(timer)
+  }, [currentText, isDeleting, currentRoleIndex])
+
   return (
     <section className='profile' id='home'>
       <div className="profile-container">
@@ -12,35 +44,36 @@ const Profile = () => {
           className="profile-content"
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, ease: 'easeOut' }}
+          transition={{ duration: 1.0, ease: [0.16, 1, 0.3, 1] }}
         >
           <motion.h4 
             className="subtitle"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.2, duration: 0.5 }}
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1, duration: 0.5 }}
           >
             WELCOME TO MY PORTFOLIO
           </motion.h4>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.6 }}
+            transition={{ delay: 0.2, duration: 0.6, type: 'spring', stiffness: 100 }}
           >
             Hello, I'm <span className="gradient-text font-bold">Sakthiram</span>
           </motion.h1>
           <motion.h3
             className="role-title"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 0.6 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3, duration: 0.4 }}
           >
-            Software Developer
+            <span>{currentText}</span>
+            <span className="typing-cursor">|</span>
           </motion.h3>
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.5, duration: 0.6 }}
+            transition={{ delay: 0.4, duration: 0.6 }}
           >
             A passionate software developer. I enjoy building high-performance web and mobile applications, solving complex coding challenges, and creating elegant developer experiences.
           </motion.p>
